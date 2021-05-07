@@ -9,6 +9,7 @@ export const TeamPage = () => {
   const [matchData, setMatchData] = useState([]);
 
   const { teamName } = useParams();
+
   useEffect(() => {
     const fetchMatches = async () => {
       const response = await fetch(`http://localhost:8080/teams/${teamName}`);
@@ -17,6 +18,7 @@ export const TeamPage = () => {
       setMatchData(data.matches);
       console.log("data: ", data);
     };
+
     fetchMatches();
   }, [teamName]);
   // Empty arrays calls only once when page is loaded,
@@ -35,11 +37,15 @@ export const TeamPage = () => {
         match={teamData.matches[0]}
       />
       {matchData.slice(1).map((matchData) => (
-        <MatchSmallCard teamName={teamData.teamName} match={matchData} />
+        <MatchSmallCard
+          key={matchData.id}
+          teamName={teamData.teamName}
+          match={matchData}
+        />
       ))}
     </div>
   );
 };
 
 // We use "UseParams" from "react-router-dom"
-// to get "teamName" which we passed from "App.js"
+// to get "teamName" which we passed from "App.js(URL)"
