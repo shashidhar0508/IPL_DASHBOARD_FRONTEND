@@ -1,13 +1,35 @@
-body {
+/* importing font styles from google fonts */
+/* @import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@1,400;1,600&display=swap"); */
+@import url("https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,400;1,700&display=swap");
+
+/* Removing the default css for complete project by below "*" styling*/
+* {
+  box-sizing: border-box;
+  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Removing underlines for href */
+a {
+  text-decoration: none;
+
+  color: rgb(25, 49, 126);
+}
+
+body {
+  /* Got below font-family from the above imports for fonts */
+  /* font-family: "Rubik", sans-serif; */
+  font-family: "Lobster Two", cursive;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  background-color: #576070;
+
+  color: white;
+
+  /* Page width */
+  max-width: 1100px;
+
+  /* Top and bottom margin as Zero,left and right as auto  */
+  margin: 0 auto;
 }

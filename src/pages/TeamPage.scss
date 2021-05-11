@@ -1,0 +1,63 @@
+// Below styling would be applied to styling of div "TeamPage"
+
+// TeamName                        PieChart
+
+// ------------------------------------------
+
+// MatchDetailedCard
+
+// ------------------------------------------
+
+// ------      ------      ------      ------
+
+// ------      ------      ------      ------
+
+// In Above UI we have 3 Rows and Max 4 Columns
+// 3 Rows for 1)TeamName and Piechart, 2)MatcheDetailedCard, 3)SmallCards
+// 4 Columns in SmallCards
+// So we are dividing the page using Grid into 3 Rows and 4 columns
+
+.TeamPage {
+  display: grid;
+  //   4 columns
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+
+  //   3 Rows
+  grid-template-rows: 1fr 1fr 1fr;
+
+  //   gap between column gap and row gap
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+
+  .team-name-section {
+    // span gave 3 columns
+    grid-column: span 3;
+
+    //   To start the text from left
+    justify-self: start;
+
+    //   Vertical align
+    align-self: end;
+  }
+
+  .team-name {
+    font-size: 4rem;
+    margin-bottom: 20px;
+  }
+
+  .win-loss-section {
+    justify-self: center;
+    padding: 40px;
+    text-align: center;
+  }
+
+  .match-detail-section {
+    grid-column: span 4;
+  }
+
+  .more-link {
+    align-self: center;
+    justify-self: center;
+    font-size: 1.5rem;
+  }
+}
