@@ -2,23 +2,24 @@ import "./App.scss";
 import { TeamPage } from "./pages/TeamPage";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { MatchPage } from "./pages/MatchPage";
-import Demo from "./pages/Demo";
+import { HomePage } from "./pages/HomePage";
 
 function App() {
   return (
     <div className="App">
       <Router>
         <Switch>
-          <Route path="/teams123">
-            {/* <MatchPage /> */}
-            <Demo />
-          </Route>
+          <Route path="/teams123">{/* <MatchPage /> */}</Route>
           <Route path="/teams/:teamName/matches/:year">
             <MatchPage />
           </Route>
 
           <Route path="/teams/:teamName">
             <TeamPage />
+          </Route>
+
+          <Route path="/">
+            <HomePage />
           </Route>
         </Switch>
       </Router>

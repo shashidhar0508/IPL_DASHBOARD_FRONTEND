@@ -4,6 +4,8 @@ import { MatchSmallCard } from "../components/MatchSmallCard";
 
 import { useParams } from "react-router-dom";
 
+import { Link } from "react-router-dom";
+
 import "./TeamPage.scss";
 
 import { PieChart } from "react-minimal-pie-chart";
@@ -15,7 +17,7 @@ export const TeamPage = () => {
   const { teamName } = useParams();
 
   useEffect(() => {
-    const fetchMatches = async () => {
+    const fetchTeam = async () => {
       const response = await fetch(`http://localhost:8080/teams/${teamName}`);
       const data = await response.json();
       setTeamData(data);
@@ -23,7 +25,7 @@ export const TeamPage = () => {
       console.log("data: ", data);
     };
 
-    fetchMatches();
+    fetchTeam();
   }, [teamName]);
   // Empty arrays calls only once when page is loaded,
   // Whenever we give value then it loads whenever that data is updated
@@ -69,7 +71,11 @@ export const TeamPage = () => {
         />
       ))}
       <div className="more-link">
-        <a href="#">More >></a>
+        <Link
+          to={`/teams/${teamName}/matches/${process.env.REACT_APP_DATA_END_YEAR}`}
+        >
+          More >>
+        </Link>
       </div>
     </div>
   );
